@@ -1,4 +1,4 @@
-package com.example.adam.myapplication;
+package com.sudowear.android;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

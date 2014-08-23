@@ -1,4 +1,4 @@
-package com.example.adam.myapplication;
+package com.sudowear.android;
 
 import android.app.Activity;
 import android.os.Bundle;
