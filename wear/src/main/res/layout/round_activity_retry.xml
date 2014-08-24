@@ -3,14 +3,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.sudowear.android.RetryActivity"
-    tools:deviceIds="wear_round">
+    tools:deviceIds="wear_round"
+    android:weightSum="1">
+
+    <ImageButton
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        android:layout_marginTop="24dp"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/imageButton"
+        android:background="@drawable/blue_oval"
+        android:clickable="false"
+        android:src="@drawable/ic_action_mic"
+        android:onClick="onRetry" />
 
     <TextView
         android:id="@+id/text"
+        android:textSize="20sp"
+        android:textColor="@android:color/white"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/imageButton"
+        android:layout_marginBottom="12dp"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:text="@string/hello_round" />
+        android:gravity="center"
+        android:text="@string/retry_string" />
+
 </RelativeLayout>

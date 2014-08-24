@@ -1,8 +1,10 @@
 package com.sudowear.android;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.wearable.view.WatchViewStub;
+import android.view.View;
 import android.widget.TextView;
 
 public class RetryActivity extends Activity {
@@ -20,6 +22,12 @@ public class RetryActivity extends Activity {
                 mTextView = (TextView) stub.findViewById(R.id.text);
             }
         });
+    }
+
+    public void onRetry(final View view) {
+        Intent i = new Intent(this, MyActivity.class);
+        i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP| Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(i);
     }
 
 }

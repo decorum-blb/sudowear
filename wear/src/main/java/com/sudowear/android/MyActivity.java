@@ -7,6 +7,7 @@ import android.speech.RecognizerIntent;
 import android.support.wearable.activity.ConfirmationActivity;
 import android.support.wearable.view.WatchViewStub;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 import java.util.List;
@@ -22,6 +23,7 @@ public class MyActivity extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
         final WatchViewStub stub = (WatchViewStub) findViewById(R.id.watch_view_stub);
@@ -29,6 +31,12 @@ public class MyActivity extends Activity {
             @Override
             public void onLayoutInflated(WatchViewStub stub) {
                 mTextView = (TextView) stub.findViewById(R.id.text);
+                mTextView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        displaySpeechRecognizer();
+                    }
+                });
             }
         });
         displaySpeechRecognizer();
@@ -68,6 +76,8 @@ public class MyActivity extends Activity {
                     startActivityForResult(intent, CONFIRMATION_REQUEST_CODE);
                 } else {
                     mTextView.setText("y u no make sense");
+                    Intent i = new Intent(this, RetryActivity.class);
+                    startActivity(i);
                 }
             }
         } else if (resultCode == RESULT_CANCELED) {
@@ -80,4 +90,5 @@ public class MyActivity extends Activity {
         }
         super.onActivityResult(requestCode, resultCode, data);
     }
+
 }
