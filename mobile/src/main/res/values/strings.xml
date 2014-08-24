@@ -4,5 +4,14 @@
     <string name="app_name">My Application</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_success">Success</string>
+    <string name="title_activity_select_command_type">Select Command Type</string>
+    <string name="title_activity_set_address">Set Address</string>
+    <string name="home">Home</string>
+    <string name="work">Work</string>
+    <string name="google_chelsea">Google Chelsea</string>
+    <string name="delivery">Delivery</string>
+    <string name="pickup">Pick-Up</string>
+    <string name="appointment">Appointment</string>
 
 </resources>
