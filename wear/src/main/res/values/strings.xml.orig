@@ -5,7 +5,10 @@
     <string name="app_label">Pseudo</string>
     <string name="hello_round">Hello Round World!</string>
     <string name="hello_square">Hello Square World!</string>
-    <string name="dialog_success">Success!</string>
+<<<<<<< Updated upstream
     <string name="title_activity_retry">Retry</string>
+=======
+    <string name="dialog_success">Success!</string>
+>>>>>>> Stashed changes
 
 </resources>

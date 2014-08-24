@@ -22,18 +22,25 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name="android.support.wearable.activity.ConfirmationActivity" />
+<<<<<<< Updated upstream
         <activity
             android:name=".Retry"
             android:label="@string/title_activity_retry" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+=======
+
+        <activity android:name="android.support.wearable.activity.ConfirmationActivity" />
+
         <service
             android:name=".MyIntentService"
             android:exported="false" >
         </service>
+>>>>>>> Stashed changes
     </application>
 
 </manifest>
