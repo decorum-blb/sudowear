@@ -20,6 +20,7 @@ public class MyActivity extends Activity {
     private final static int CONFIRMATION_REQUEST_CODE = 2;
 
     private TextView mTextView;
+    private boolean mReceivingResult = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +40,14 @@ public class MyActivity extends Activity {
                 });
             }
         });
-        displaySpeechRecognizer();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (!mReceivingResult) {
+            displaySpeechRecognizer();
+        }
     }
 
     // Create an intent that can start the Speech Recognizer activity
@@ -49,6 +57,7 @@ public class MyActivity extends Activity {
         intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
                 RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
         // Start the activity, the intent will be populated with the speech text
+        mReceivingResult = true;
         startActivityForResult(intent, SPEECH_REQUEST_CODE);
     }
 
@@ -58,6 +67,7 @@ public class MyActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode,
             Intent data) {
+        mReceivingResult = false;
         if (resultCode == RESULT_OK) {
             if (requestCode == SPEECH_REQUEST_CODE) {
                 List<String> results = data.getStringArrayListExtra(

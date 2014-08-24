@@ -37,6 +37,6 @@
         android:layout_below="@+id/commandNameInput"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="108dp"
-        android:onClick=""/>
+        android:onClick="goToNext"/>
 
 </RelativeLayout>
